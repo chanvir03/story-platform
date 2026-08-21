@@ -273,10 +273,62 @@
         letter-spacing: 1px;
       }
     }
+    #rlx-splash {
+    position: fixed;
+    inset: 0;
+    background: #0b0b14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    animation: rlxSplashOut 1s ease 2.5s forwards;
+}
+
+.rlx-logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 8vw, 90px);
+    font-weight: bold;
+    letter-spacing: 6px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255,255,255,.5);
+    animation: rlxLogoIn 2.5s ease forwards;
+}
+
+@keyframes rlxLogoIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        letter-spacing: 20px;
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.08);
+        letter-spacing: 7px;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        letter-spacing: 6px;
+    }
+}
+
+@keyframes rlxSplashOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
   </style>
 </head>
 
 <body>
+<div id="rlx-splash">
+    <div class="rlx-logo">RLX WRITES</div>
+</div>  
 
 <header>
   <nav>
