@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Suvarchala Hanuma | RLX Writes</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #111116;
+      color: #f5f0e8;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 22px 7%;
+      border-bottom: 1px solid #3b3740;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #17151b;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: #f5f0e8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #c9a7ff;
+    }
+
+    .book-hero {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 30px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .cover {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.5);
+    }
+
+    .tag {
+      color: #c9a7ff;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: 52px;
+      line-height: 1.05;
+      margin: 12px 0;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      color: #c9a7ff;
+      margin-bottom: 25px;
+    }
+
+    .author {
+      font-family: Arial, sans-serif;
+      color: #cfc9d3;
+      margin-bottom: 25px;
+    }
+
+    .description {
+      color: #ddd7df;
+      font-size: 17px;
+    }
+
+    .details {
+      margin-top: 25px;
+      padding: 18px;
+      background: #1d1a21;
+      border-radius: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    .free {
+      color: #8ee6b2;
+      font-weight: bold;
+    }
+
+    .chapters {
+      max-width: 900px;
+      margin: 20px auto 80px;
+      padding: 0 30px;
+    }
+
+    .chapters h2 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .chapter {
+      background: #1d1a21;
+      border: 1px solid #3b3740;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chapter-title {
+      font-size: 18px;
+    }
+
+    .chapter-status {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #8ee6b2;
+      font-weight: bold;
+    }
+
+    .locked {
+      color: #aaa2ad;
+    }
+
+    .read-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 13px 25px;
+      background: #c9a7ff;
+      color: #17151b;
+      text-decoration: none;
+      border-radius: 6px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px;
+      border-top: 1px solid #3b3740;
+      color: #aaa2ad;
+      font-family: Arial, sans-serif;
+    }
+
+    @media (max-width: 750px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .book-hero {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .cover {
+        max-width: 360px;
+        margin: auto;
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">RLX WRITES</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#books">Books</a>
+    <a href="index.html#stories">Stories</a>
+    <a href="index.html#blog">Blog</a>
+  </nav>
+</header>
+
+<section class="book-hero">
+
+  <div>
+    <img
+      class="cover"
+      src="DIGITAL_BOOK_COVER_suvarchala_hanuma.jpg"
+      alt="Suvarchala Hanuma - A Story of Bajarangi"
+    >
+  </div>
+
+  <div>
+
+    <div class="tag">A SERIES OF MIGHTY WARRIORS</div>
+
+    <h1>Suvarchala Hanuma</h1>
+
+    <div class="subtitle">A Story of Bajarangi</div>
+
+    <div class="author">
+      By <strong>Chandu Vikas Reddy Katikam</strong><br>
+      aka Rolex Reddy Katikam
+    </div>
+
+    <div class="description">
+
+      <p>
+        <strong>Suvarchala Hanuma</strong> is an epic tale of
+        strength, love, destiny, mighty warriors, action,
+        adventure and emotional growth.
+      </p>
+
+      <p>
+        The story follows Suvarchala, a woman of extraordinary
+        courage and wisdom, whose life becomes intertwined with
+        Bajarangi, a fierce warrior rising above impossible odds
+        to fulfill his destiny.
+      </p>
+
+      <p>
+        Together they face challenges beyond physical battles,
+        confronting emotions, responsibility, loyalty and the
+        powerful forces seeking to shape their world.
+      </p>
+
+      <p>
+        Their bond becomes a force that influences not only
+        their own future, but the fate of those around them.
+      </p>
+
+    </div>
+
+    <div class="details">
+      📖 <strong>139 document pages</strong><br>
+      📚 <strong>11 chapters</strong><br>
+      <span class="free">🆓 Chapters 1–3 are FREE</span><br>
+      🔒 Chapters 4–11 will be available as premium content
+    </div>
+
+    <a class="read-button" href="#chapters">
+      Start Reading →
+    </a>
+
+  </div>
+
+</section>
+
+<section class="chapters" id="chapters">
+
+  <h2>Chapters</h2>
+
+  <div class="chapter">
+    <div class="chapter-title">
+      Chapter 1 — Bajarangi and Suvarchala
+    </div>
+    <div class="chapter-status">
+      FREE
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-title">
+      Chapter 2 — Shadows of Ambition
+    </div>
+    <div class="chapter-status">
+      FREE
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-title">
+      Chapter 3 — A Challenge Reborn
+    </div>
+    <div class="chapter-status">
+      FREE
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-title">
+      Chapter 4 — The Chosen Warrior Rises
+    </div>
+    <div class="chapter-status locked">
+      🔒 PREMIUM
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-title">
+      Chapter 5 — Revenge of Red Soil
+    </div>
+    <div class="chapter-status locked">
+      🔒 PREMIUM
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-title">
+      Chapter 6 — The Divine Encounter
+    </div>
+    <div class="chapter-status locked">
+      🔒 PREMIUM
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-title">
+      Chapter 7 — The Price of Persistence
+    </div>
+    <div class="chapter-status locked">
+      🔒 PREMIUM
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-title">
+      Chapter 8 — Suvarchala Hanuma
+    </div>
+    <div class="chapter-status locked">
+      🔒 PREMIUM
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-title">
+      Chapter 9 — Bound by Honor, Tested by Love
+    </div>
+    <div class="chapter-status locked">
+      🔒 PREMIUM
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-title">
+      Chapter 10
+    </div>
+    <div class="chapter-status locked">
+      🔒 PREMIUM
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-title">
+      Chapter 11
+    </div>
+    <div class="chapter-status locked">
+      🔒 PREMIUM
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 RLX Writes. All rights reserved.
+</footer>
+
+</body>
+</html>
