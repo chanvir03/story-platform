@@ -367,6 +367,7 @@
       <li><a href="#books">Books</a></li>
       <li><a href="#stories">Stories</a></li>
       <li><a href="#blog">Blog</a></li>
+      <li><a href="#updates">Updates</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
       <li>
@@ -600,7 +601,26 @@
 </section>
 
 
-<section class="about" id="about">
+<!-- UPDATES SECTION -->
+<section id="updates" class="updates-section">
+
+  <h2 class="section-title">Latest Updates</h2>
+
+  <p class="section-subtitle">
+    New books, blogs and stories from RLX Writes.
+  </p>
+
+  <div id="updates-list" class="updates-grid">
+
+    <!-- Updates will be loaded automatically from Supabase -->
+
+    <p id="updates-loading">Loading updates...</p>
+
+  </div>
+
+</section>
+  
+  <section class="about" id="about">
 
   <div class="about-content">
 
@@ -651,6 +671,78 @@ const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_PUBLISHABLE_KEY
 );
+async function loadUpdates() {
+    const updatesList = document.getElementById("updates-list");
+
+    if (!updatesList) return;
+
+    updatesList.innerHTML = "<p>Loading updates...</p>";
+
+    const { data, error } = await supabaseClient
+        .from("updates")
+        .select("*")
+        .eq("status", "published")
+        .order("created_at", { ascending: false });
+
+    if (error) {
+        console.error("Updates error:", error);
+        updatesList.innerHTML =
+            "<p>Unable to load updates.</p>";
+        return;
+    }
+
+    if (!data || data.length === 0) {
+        updatesList.innerHTML =
+            "<p>No updates available yet.</p>";
+        return;
+    }
+
+    updatesList.innerHTML = "";
+
+    data.forEach(update => {
+
+        const card = document.createElement("article");
+        card.className = "update-card";
+
+        const type = update.type || "update";
+        const title = update.title || "Untitled";
+        const content = update.content || "";
+        const cover = update.cover_image || "";
+        const slug = update.slug || "#";
+
+        card.innerHTML = `
+            ${cover ? `
+                <img
+                    src="${cover}"
+                    alt="${title}"
+                    class="update-cover"
+                >
+            ` : ""}
+
+            <div class="update-content">
+
+                <span class="update-type">
+                    ${type.toUpperCase()}
+                </span>
+
+                <h3>${title}</h3>
+
+                <p>${content}</p>
+
+                ${slug !== "#" ? `
+                    <a href="${slug}" class="read">
+                        Read More →
+                    </a>
+                ` : ""}
+
+            </div>
+        `;
+
+        updatesList.appendChild(card);
+    });
+}
+
+loadUpdates();
 </script>
   
   <script>
