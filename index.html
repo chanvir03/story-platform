@@ -696,6 +696,46 @@ const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_PUBLISHABLE_KEY
 );
+  // Admin login
+document.getElementById("admin-login-btn")?.addEventListener("click", async () => {
+  const email = document.getElementById("admin-email").value.trim();
+  const password = document.getElementById("admin-password").value;
+  const message = document.getElementById("admin-login-message");
+
+  if (!email || !password) {
+    message.textContent = "Please enter your email and password.";
+    return;
+  }
+
+  message.textContent = "Logging in...";
+
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error) {
+    console.error("Login error:", error);
+    message.textContent = "Invalid email or password.";
+    return;
+  }
+
+  const { data: admin, error: adminError } = await supabaseClient
+    .from("admin_users")
+    .select("user_id")
+    .eq("user_id", data.user.id)
+    .maybeSingle();
+
+  if (adminError || !admin) {
+    await supabaseClient.auth.signOut();
+    message.textContent = "You are not authorized as an admin.";
+    return;
+  }
+
+  message.textContent = "Login successful!";
+
+  window.location.hash = "#admin-dashboard";
+});
 async function loadUpdates() {
     const updatesList = document.getElementById("updates-list");
 
