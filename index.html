@@ -292,6 +292,15 @@
     color: #ffffff;
     text-shadow: 0 0 10px rgba(255,255,255,.5);
     animation: rlxLogoIn 2.5s ease forwards;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rlx-logo img {
+    width: clamp(180px, 35vw, 420px);
+    height: auto;
+    display: block;
 }
 
 @keyframes rlxLogoIn {
@@ -328,7 +337,7 @@
 <body>
 <div id="rlx-splash">
    <div class="rlx-logo">
-    <img src="logo" alt="RLX WRITES">
+    <img src="logo.png" alt="RLX WRITES">
 </div>
 </div>  
 
