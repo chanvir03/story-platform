@@ -797,7 +797,7 @@ document.getElementById("reset-password-btn")?.addEventListener("click", async (
   const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
     redirectTo: "https://chanvir03.github.io/story-platform/"
   });
-
+  console.log("RESET RESULT:", { error });
   if (error) {
     console.error("Password reset error:", error);
     message.textContent = "Unable to send reset link. Please try again.";
