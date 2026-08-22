@@ -640,6 +640,19 @@
   © 2026 RLX Writes. All rights reserved.
 
 </footer>
+  <!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://bhzgbqegeptiqbnvfqni.supabase.co/rest/v1/";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_k_OhfJGglTH9XoVek0dzmA_QumPOD5Z";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+</script>
+  
   <script>
 const searchBar = document.getElementById("searchBar");
 
