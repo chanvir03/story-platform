@@ -677,10 +677,33 @@
     </button>
 
     <p id="admin-login-message"></p>
+
+<p>
+  <a href="#forgot-password">Forgot Password?</a>
+</p>
+
+</div>
+</section>
+</section>
+<!-- FORGOT PASSWORD -->
+<section id="forgot-password" class="contact" style="display:none;">
+  <h2 class="section-title">Reset Password</h2>
+
+  <div style="max-width:420px;margin:30px auto;">
+    <input
+      type="email"
+      id="reset-email"
+      placeholder="Enter your admin email"
+      style="width:100%;padding:14px;margin-bottom:12px;"
+    >
+
+    <button type="button" id="reset-password-btn">
+      Send Reset Link
+    </button>
+
+    <p id="reset-message"></p>
   </div>
 </section>
-</section>
-
 <!-- ADMIN DASHBOARD -->
 <section id="admin-dashboard" class="contact" style="display:none;">
     <h2 class="section-title">Admin Dashboard</h2>
@@ -759,6 +782,30 @@ const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_PUBLISHABLE_KEY
 );
+  // Forgot Password
+document.getElementById("reset-password-btn")?.addEventListener("click", async () => {
+  const email = document.getElementById("reset-email").value.trim();
+  const message = document.getElementById("reset-message");
+
+  if (!email) {
+    message.textContent = "Please enter your email address.";
+    return;
+  }
+
+  message.textContent = "Sending reset link...";
+
+  const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+    redirectTo: "https://chanvir03.github.io/story-platform/"
+  });
+
+  if (error) {
+    console.error("Password reset error:", error);
+    message.textContent = "Unable to send reset link. Please try again.";
+    return;
+  }
+
+  message.textContent = "Reset link sent! Check your email.";
+});
   // Admin login
 document.getElementById("admin-login-btn")?.addEventListener("click", async () => {
   const email = document.getElementById("admin-email").value.trim();
