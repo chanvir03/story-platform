@@ -291,7 +291,7 @@
     letter-spacing: 6px;
     color: #ffffff;
     text-shadow: 0 0 10px rgba(255,255,255,.5);
-    animation: rlxLogoIn 2.5s ease forwards;
+    animation: rlxLogoIn 5s ease-out forwards;
   display: flex;
     justify-content: center;
     align-items: center;
@@ -304,21 +304,25 @@
 }
 
 @keyframes rlxLogoIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-        letter-spacing: 20px;
-    }
-    60% {
-        opacity: 1;
-        transform: scale(1.08);
-        letter-spacing: 7px;
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-        letter-spacing: 6px;
-    }
+  0% {
+    opacity: 0;
+    transform: scale(2.8);
+  }
+
+  20% {
+    opacity: 1;
+    transform: scale(2.3);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes rlxSplashOut {
