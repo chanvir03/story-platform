@@ -369,6 +369,9 @@
       <li><a href="#blog">Blog</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li>
+      <input type="text" id="searchBar" placeholder="Search...">
+      </li>
     </ul>
   </nav>
 </header>
@@ -637,6 +640,23 @@
   © 2026 RLX Writes. All rights reserved.
 
 </footer>
+  <script>
+const searchBar = document.getElementById("searchBar");
+
+searchBar.addEventListener("input", function () {
+    const searchText = this.value.toLowerCase().trim();
+
+    document.querySelectorAll("section, article, .card").forEach(function (item) {
+        const text = item.textContent.toLowerCase();
+
+        if (searchText === "" || text.includes(searchText)) {
+            item.style.display = "";
+        } else {
+            item.style.display = "none";
+        }
+    });
+});
+</script>
 
 </body>
 </html>
