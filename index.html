@@ -679,6 +679,69 @@
     <p id="admin-login-message"></p>
   </div>
 </section>
+</section>
+
+<!-- ADMIN DASHBOARD -->
+<section id="admin-dashboard" class="contact" style="display:none;">
+    <h2 class="section-title">Admin Dashboard</h2>
+
+    <div style="max-width:900px;margin:30px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
+
+        <div class="book">
+            <h3>📚 Books</h3>
+            <p>Add, edit and manage books.</p>
+            <button type="button">Manage Books</button>
+        </div>
+
+        <div class="book">
+            <h3>📖 Chapters</h3>
+            <p>Manage free and paid chapters.</p>
+            <button type="button">Manage Chapters</button>
+        </div>
+
+        <div class="book">
+            <h3>✍️ Blog</h3>
+            <p>Create and manage blog posts.</p>
+            <button type="button">Manage Blog</button>
+        </div>
+
+        <div class="book">
+            <h3>🔔 Updates</h3>
+            <p>Create and manage announcements.</p>
+            <button type="button">Manage Updates</button>
+        </div>
+
+        <div class="book">
+            <h3>👤 Authors</h3>
+            <p>Manage author information.</p>
+            <button type="button">Manage Authors</button>
+        </div>
+
+        <div class="book">
+            <h3>🚀 Launches</h3>
+            <p>Schedule book launches.</p>
+            <button type="button">Manage Launches</button>
+        </div>
+
+        <div class="book">
+            <h3>💳 Purchases</h3>
+            <p>View purchases and payments.</p>
+            <button type="button">View Purchases</button>
+        </div>
+
+        <div class="book">
+            <h3>⚙️ Settings</h3>
+            <p>Manage website settings.</p>
+            <button type="button">Settings</button>
+        </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:30px;">
+        <button type="button" id="admin-logout-btn">Logout</button>
+    </div>
+</section>
+
 
 <footer>
 
@@ -736,6 +799,41 @@ document.getElementById("admin-login-btn")?.addEventListener("click", async () =
 
   window.location.hash = "#admin-dashboard";
 });
+message.textContent = "Login successful!";
+window.location.hash = "#admin-dashboard";
+});
+
+// ADMIN DASHBOARD
+function showAdminDashboard() {
+    document.getElementById("admin-dashboard").style.display = "block";
+
+    document.querySelectorAll("body > section").forEach(section => {
+        if (section.id !== "admin-dashboard") {
+            section.style.display = "none";
+        }
+    });
+}
+
+// Check dashboard when URL changes
+window.addEventListener("hashchange", () => {
+    if (window.location.hash === "#admin-dashboard") {
+        showAdminDashboard();
+    }
+});
+
+// Show dashboard immediately if already on dashboard
+if (window.location.hash === "#admin-dashboard") {
+    showAdminDashboard();
+}
+
+// Logout
+document.getElementById("admin-logout-btn").addEventListener("click", async () => {
+    await supabaseClient.auth.signOut();
+
+    document.getElementById("admin-dashboard").style.display = "none";
+    window.location.hash = "#admin-login";
+});
+
 async function loadUpdates() {
     const updatesList = document.getElementById("updates-list");
 
