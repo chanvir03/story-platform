@@ -743,7 +743,9 @@
         <div class="book">
             <h3>📚 Books</h3>
             <p>Add, edit and manage books.</p>
-            <button type="button">Manage Books</button>
+            <button type="button" onclick="window.location.hash='#manage-books'">
+    Manage Books
+</button>
         </div>
 
         <div class="book">
@@ -907,11 +909,20 @@ function showAdminDashboard() {
         }
     });
 }
+function showManageBooks() {
+    document.querySelectorAll("body > section").forEach(section => {
+        section.style.display = "none";
+    });
 
-// Check dashboard when URL changes
+    document.getElementById("manage-books").style.display = "block";
+}
 window.addEventListener("hashchange", () => {
     if (window.location.hash === "#admin-dashboard") {
         showAdminDashboard();
+    }
+
+    if (window.location.hash === "#manage-books") {
+        showManageBooks();
     }
 });
 
@@ -919,7 +930,9 @@ window.addEventListener("hashchange", () => {
 if (window.location.hash === "#admin-dashboard") {
     showAdminDashboard();
 }
-
+if (window.location.hash === "#manage-books") {
+    showManageBooks();
+}
 // Logout
 document.getElementById("admin-logout-btn").addEventListener("click", async () => {
     await supabaseClient.auth.signOut();
@@ -1089,6 +1102,22 @@ searchBar.addEventListener("input", function () {
         }
     });
 });
+    <!-- MANAGE BOOKS -->
+<section id="manage-books" class="contact" style="display:none;">
+    <h2 class="section-title">Manage Books</h2>
+
+    <div style="max-width:900px;margin:30px auto;">
+        <button type="button" onclick="window.location.hash='#admin-dashboard'">
+            ← Back to Admin Dashboard
+        </button>
+
+        <h3 style="margin-top:30px;">Books</h3>
+
+        <div id="books-list">
+            <p>Loading books...</p>
+        </div>
+    </div>
+</section>
 </script>
 
 </body>
