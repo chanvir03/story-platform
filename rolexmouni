@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RolexMouni | RLX Writes</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #111;
+      color: #fff;
+      line-height: 1.8;
+    }
+
+    .book {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px 25px;
+    }
+
+    .cover {
+      text-align: center;
+      padding: 80px 20px;
+      border-bottom: 1px solid #555;
+    }
+
+    .cover h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .cover p {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    .chapter {
+      margin-top: 60px;
+    }
+
+    .chapter h2 {
+      color: #e5c6ff;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 50px;
+      color: #e5c6ff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="book">
+
+    <section class="cover">
+      <h1>RolexMouni</h1>
+      <p>A story from RLX Writes</p>
+    </section>
+
+    <section class="chapter">
+      <h2>Chapter 1</h2>
+
+      <p>
+        The story begins here...
+      </p>
+
+      <p>
+        Add the first chapter of RolexMouni here.
+      </p>
+    </section>
+
+    <a class="back" href="index.html">← Back to RLX Writes</a>
+
+  </main>
+
+</body>
+</html>
