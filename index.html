@@ -1119,6 +1119,60 @@ searchBar.addEventListener("input", function () {
     </div>
 </section>
 </script>
+<script>
+(function () {
 
+    function openManageBooks() {
+        // Hide all main sections
+        document.querySelectorAll("body > section").forEach(function(section) {
+            section.style.display = "none";
+        });
+
+        // Find the Books page
+        let booksPage = document.getElementById("manage-books");
+
+        // Create it if it doesn't already exist
+        if (!booksPage) {
+            booksPage = document.createElement("section");
+            booksPage.id = "manage-books";
+            booksPage.className = "contact";
+
+            booksPage.innerHTML = `
+                <h2 class="section-title">Manage Books</h2>
+
+                <div style="max-width:900px;margin:30px auto;padding:20px;">
+                    <button type="button"
+                        onclick="window.location.hash='#admin-dashboard'">
+                        ← Back to Admin Dashboard
+                    </button>
+
+                    <h3 style="margin-top:30px;">Books</h3>
+
+                    <div id="books-list">
+                        <p>Books management is ready.</p>
+                    </div>
+                </div>
+            `;
+
+            document.body.insertBefore(booksPage, document.body.lastElementChild);
+        }
+
+        booksPage.style.display = "block";
+    }
+
+    // When the URL changes
+    window.addEventListener("hashchange", function () {
+        if (window.location.hash === "#manage-books") {
+            openManageBooks();
+        }
+    });
+
+    // If the page is already on Manage Books
+    if (window.location.hash === "#manage-books") {
+        openManageBooks();
+    }
+
+})();
+</script>
 </body>
 </html>
