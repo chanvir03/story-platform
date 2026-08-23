@@ -782,10 +782,15 @@ const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_PUBLISHABLE_KEY
 );
-  // Forgot Password
+  
+// FORGOT PASSWORD
 document.getElementById("reset-password-btn")?.addEventListener("click", async () => {
+
   const email = document.getElementById("reset-email").value.trim();
   const message = document.getElementById("reset-message");
+
+  console.log("RESET BUTTON CLICKED");
+  console.log("EMAIL:", email);
 
   if (!email) {
     message.textContent = "Please enter your email address.";
@@ -794,17 +799,32 @@ document.getElementById("reset-password-btn")?.addEventListener("click", async (
 
   message.textContent = "Sending reset link...";
 
-  const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
-    redirectTo: "https://chanvir03.github.io/story-platform/"
-  });
-  console.log("RESET RESULT:", { error });
-  if (error) {
-    console.error("Password reset error:", error);
-    message.textContent = "Unable to send reset link. Please try again.";
-    return;
+  try {
+
+    const { data, error } =
+      await supabaseClient.auth.resetPasswordForEmail(email, {
+        redirectTo: "https://chanvir03.github.io/story-platform/"
+      });
+
+    console.log("SUPABASE RESET DATA:", data);
+    console.log("SUPABASE RESET ERROR:", error);
+
+    if (error) {
+      message.textContent = "Error: " + error.message;
+      console.error("RESET ERROR:", error);
+      return;
+    }
+
+    message.textContent =
+      "Reset link requested. Check your email, including Spam/Junk.";
+
+  } catch (err) {
+
+    console.error("RESET EXCEPTION:", err);
+    message.textContent = "Error: " + err.message;
+
   }
 
-  message.textContent = "Reset link sent! Check your email.";
 });
   // Admin login
 document.getElementById("admin-login-btn")?.addEventListener("click", async () => {
