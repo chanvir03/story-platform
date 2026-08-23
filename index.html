@@ -704,6 +704,36 @@
     <p id="reset-message"></p>
   </div>
 </section>
+  <!-- CHANGE PASSWORD -->
+<section id="change-password" class="contact" style="display:none;">
+
+  <h2 class="section-title">Create New Password</h2>
+
+  <div style="max-width:420px;margin:30px auto;">
+
+    <input
+      type="password"
+      id="new-password"
+      placeholder="Enter new password"
+      style="width:100%;padding:14px;margin-bottom:12px;"
+    >
+
+    <input
+      type="password"
+      id="confirm-password"
+      placeholder="Confirm new password"
+      style="width:100%;padding:14px;margin-bottom:12px;"
+    >
+
+    <button type="button" id="change-password-btn">
+      Change Password
+    </button>
+
+    <p id="change-password-message"></p>
+
+  </div>
+
+</section>
 <!-- ADMIN DASHBOARD -->
 <section id="admin-dashboard" class="contact" style="display:none;">
     <h2 class="section-title">Admin Dashboard</h2>
@@ -970,6 +1000,77 @@ async function loadUpdates() {
 }
 
 loadUpdates();
+// PASSWORD RECOVERY
+supabaseClient.auth.onAuthStateChange(async (event, session) => {
+
+  if (event === "PASSWORD_RECOVERY") {
+
+    document.querySelectorAll("body > section").forEach(section => {
+      section.style.display = "none";
+    });
+
+    document.getElementById("change-password").style.display = "block";
+
+    window.location.hash = "change-password";
+  }
+
+});
+
+// CHANGE PASSWORD
+document.getElementById("change-password-btn")?.addEventListener("click", async () => {
+
+  const newPassword =
+    document.getElementById("new-password").value;
+
+  const confirmPassword =
+    document.getElementById("confirm-password").value;
+
+  const message =
+    document.getElementById("change-password-message");
+
+  if (!newPassword || !confirmPassword) {
+    message.textContent =
+      "Please enter and confirm your new password.";
+    return;
+  }
+
+  if (newPassword !== confirmPassword) {
+    message.textContent =
+      "Passwords do not match.";
+    return;
+  }
+
+  if (newPassword.length < 6) {
+    message.textContent =
+      "Password must be at least 6 characters.";
+    return;
+  }
+
+  message.textContent = "Updating password...";
+
+  const { error } =
+    await supabaseClient.auth.updateUser({
+      password: newPassword
+    });
+
+  if (error) {
+    console.error("Password update error:", error);
+    message.textContent =
+      "Unable to update password. Please try again.";
+    return;
+  }
+
+  message.textContent =
+    "Password changed successfully!";
+
+  await supabaseClient.auth.signOut();
+
+  setTimeout(() => {
+    window.location.hash = "admin-login";
+    window.location.reload();
+  }, 2000);
+
+});
 </script>
   
   <script>
