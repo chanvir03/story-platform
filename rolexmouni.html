@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>RolexMouni | RLX Writes</title>
 
   <style>
@@ -12,7 +13,6 @@
       background: #111;
       color: #fff;
       line-height: 1.8;
-      text-align: center;
     }
 
     .book {
@@ -22,17 +22,17 @@
     }
 
     .cover {
+      text-align: center;
       padding: 30px 20px 50px;
       border-bottom: 1px solid #555;
     }
 
     .cover img {
-      max-width: 500px;
       width: 100%;
-      height: auto;
+      max-width: 500px;
+      border-radius: 8px;
       display: block;
       margin: 0 auto 30px;
-      border-radius: 8px;
     }
 
     .cover h1 {
@@ -43,27 +43,60 @@
     .subtitle {
       font-size: 22px;
       color: #ccc;
-      margin-bottom: 10px;
     }
 
     .author {
       font-size: 18px;
-      color: #ddd;
+      color: #ccc;
     }
 
-    .read-button {
+    .reading {
+      margin-top: 40px;
+    }
+
+    .reading h2 {
+      color: #e5c6ff;
+    }
+
+    .chapter {
+      margin-top: 60px;
+      padding: 30px;
+      border: 1px solid #444;
+      border-radius: 10px;
+      background: #181818;
+    }
+
+    .chapter h2 {
+      color: #e5c6ff;
+    }
+
+    .free {
+      color: #7cff9b;
+      font-weight: bold;
+    }
+
+    .locked {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .lock {
+      font-size: 40px;
+    }
+
+    .locked h2 {
+      color: #e5c6ff;
+    }
+
+    .subscribe {
       display: inline-block;
-      margin-top: 30px;
-      padding: 14px 28px;
+      margin-top: 15px;
+      padding: 12px 25px;
       background: #e5c6ff;
       color: #111;
       text-decoration: none;
-      font-weight: bold;
       border-radius: 6px;
-    }
-
-    .read-button:hover {
-      opacity: 0.85;
+      font-weight: bold;
     }
 
     .back {
@@ -77,33 +110,117 @@
 
 <body>
 
-  <main class="book">
+<main class="book">
 
-    <section class="cover">
+  <!-- ROLEXMOUNI COVER -->
+  <section class="cover">
 
-      <img src="rolexmouni%20cover.jpg" alt="RolexMouni cover">
+    <img
+      src="rolexmouni%20cover.jpg"
+      alt="RolexMouni Cover"
+    >
 
-      <h1>RolexMouni</h1>
+    <h1>RolexMouni</h1>
 
-      <p class="subtitle">
-        A Battle for Love and Revenge
+    <p class="subtitle">
+      A Battle for Love and Revenge
+    </p>
+
+    <p class="author">
+      By Chanvir Katikam
+    </p>
+
+  </section>
+
+
+  <!-- FREE READING -->
+  <section class="reading">
+
+    <h2>Free Reading</h2>
+
+    <p>
+      <span class="free">FREE</span>
+      Chapter 1 — RolexMouni
+    </p>
+
+    <p>
+      <span class="free">FREE</span>
+      Chapter 2
+    </p>
+
+    <p>
+      <span class="free">FREE</span>
+      Chapter 3
+    </p>
+
+
+    <!-- CHAPTER 1 -->
+    <article class="chapter">
+
+      <h2>Chapter 1</h2>
+
+      <!-- PUT CHAPTER 1 CONTENT HERE -->
+
+      <p>
+        Add the first chapter of RolexMouni here.
       </p>
 
-      <p class="author">
-        By Chanvir Katikam
+    </article>
+
+
+    <!-- CHAPTER 2 -->
+    <article class="chapter">
+
+      <h2>Chapter 2</h2>
+
+      <!-- PUT CHAPTER 2 CONTENT HERE -->
+
+      <p>
+        Add the second chapter of RolexMouni here.
       </p>
 
-      <a class="read-button" href="rolexmouni.pdf" target="_blank">
-        Read Book →
+    </article>
+
+
+    <!-- CHAPTER 3 -->
+    <article class="chapter">
+
+      <h2>Chapter 3</h2>
+
+      <!-- PUT CHAPTER 3 CONTENT HERE -->
+
+      <p>
+        Add the third chapter of RolexMouni here.
+      </p>
+
+    </article>
+
+
+    <!-- PAID CHAPTERS -->
+    <article class="chapter locked">
+
+      <div class="lock">🔒</div>
+
+      <h2>Chapters 4–134</h2>
+
+      <p>
+        The remaining chapters of RolexMouni are available to paid readers.
+      </p>
+
+      <a class="subscribe" href="index.html">
+        Subscribe / Buy to Continue
       </a>
 
-    </section>
+    </article>
 
-    <a class="back" href="index.html">
-      ← Back to RLX Writes
-    </a>
+  </section>
 
-  </main>
+
+  <a class="back" href="index.html">
+    ← Back to RLX Writes
+  </a>
+
+</main>
 
 </body>
 </html>
