@@ -12,36 +12,58 @@
       background: #111;
       color: #fff;
       line-height: 1.8;
+      text-align: center;
     }
 
     .book {
       max-width: 900px;
       margin: auto;
-      padding: 50px 25px;
+      padding: 40px 25px;
     }
 
     .cover {
-      text-align: center;
-      padding: 80px 20px;
+      padding: 30px 20px 50px;
       border-bottom: 1px solid #555;
+    }
+
+    .cover img {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 30px;
+      border-radius: 8px;
     }
 
     .cover h1 {
       font-size: 48px;
-      margin-bottom: 15px;
+      margin: 10px 0;
     }
 
-    .cover p {
-      font-size: 18px;
+    .subtitle {
+      font-size: 22px;
       color: #ccc;
+      margin-bottom: 10px;
     }
 
-    .chapter {
-      margin-top: 60px;
+    .author {
+      font-size: 18px;
+      color: #ddd;
     }
 
-    .chapter h2 {
-      color: #e5c6ff;
+    .read-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background: #e5c6ff;
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    .read-button:hover {
+      opacity: 0.85;
     }
 
     .back {
@@ -58,23 +80,28 @@
   <main class="book">
 
     <section class="cover">
+
+      <img src="rolexmouni%20cover.jpg" alt="RolexMouni cover">
+
       <h1>RolexMouni</h1>
-      <p>A story from RLX Writes</p>
-    </section>
 
-    <section class="chapter">
-      <h2>Chapter 1</h2>
-
-      <p>
-        The story begins here...
+      <p class="subtitle">
+        A Battle for Love and Revenge
       </p>
 
-      <p>
-        Add the first chapter of RolexMouni here.
+      <p class="author">
+        By Chanvir Katikam
       </p>
+
+      <a class="read-button" href="rolexmouni.pdf" target="_blank">
+        Read Book →
+      </a>
+
     </section>
 
-    <a class="back" href="index.html">← Back to RLX Writes</a>
+    <a class="back" href="index.html">
+      ← Back to RLX Writes
+    </a>
 
   </main>
 
