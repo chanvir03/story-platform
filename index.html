@@ -168,7 +168,7 @@
     .book-cover img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
     .book-info {
@@ -417,7 +417,7 @@
     <img
       src="suvarchala-hanuma-cover.jpg"
       alt="Suvarchala Hanuma - A Story of Bajarangi"
-      style="width: 100%; height: 100%; object-fit: cover;"
+      style="width: 100%; height: 100%; object-fit: contain;"
     >
   </div>
 
@@ -458,9 +458,13 @@
 
     
 <div class="book">
-  <div class="book-cover">
-    <img src="rolexmouni cover.jpg" alt="RolexMouni Cover">
-  </div>
+ <div class="book-cover" style="height: 380px; padding: 0;">
+    <img
+        src="rolexmouni cover.jpg"
+        alt="RolexMouni Cover"
+        style="width: 100%; height: 100%; object-fit: contain;"
+    >
+</div>
 
  <div class="book-info">
 
